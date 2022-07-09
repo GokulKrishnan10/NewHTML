@@ -4,12 +4,18 @@
     </head>
     <h1>Learning JavaScript!!!</h1>
     <body>
+        <button onclick="func()">Date</button>
+        <h2 id="h22"></h2>
         <marquee>asduyfafdyuadif</marquee>
+        <div class=""present></div>
         <script>
             let x=5,y=10;
             var z=x+y;
             console.log(z);
             document.getElementById("demo").innerHTML="The addition of Numbers x: "+x+" and y: "+y+" is "+z+" using JavaScript.";
+            function func(){
+                document.getElementById("h22").innerHTML=Date();
+            }
         </script>
     </body>
 </html>
