@@ -3,18 +3,35 @@
     <head>
     </head>
     <h1>Learning JavaScript!!!</h1>
+    <link rel="stylesheet" type="text/css" href="js.css">
     <body>
         <button onclick="func()">Date</button>
         <h2 id="h22"></h2>
         <marquee>asduyfafdyuadif</marquee>
-        <div class=""present></div>
+        <button onclick="on()">BULB ON</button>
+        <img id="image" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width: 100px">
+        <button onclick="off()">BULB OFF</button>
+        <br><br>
+        <div class="d1">
+            <button  class="button1" onclick="printScreen()">PRINT</button>
+        </div>
+        
         <script>
             let x=5,y=10;
             var z=x+y;
             console.log(z);
             document.getElementById("demo").innerHTML="The addition of Numbers x: "+x+" and y: "+y+" is "+z+" using JavaScript.";
+            function printScreen(){
+                window.print();
+            }
             function func(){
                 document.getElementById("h22").innerHTML=Date();
+            }
+            function on(){
+                document.getElementById("image").src="https://www.w3schools.com/js/pic_bulbon.gif";
+            }
+            function off(){
+                document.getElementById("image").src="https://www.w3schools.com/js/pic_bulboff.gif";
             }
         </script>
     </body>

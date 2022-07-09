@@ -1,0 +1,14 @@
+.button1{
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 5px slateblue;
+    height:40px;
+    width: 80px;
+}
+div.d1{
+    margin-left: 9cm;
+}
+body{
+    background-color: aquamarine;
+}
