@@ -16,13 +16,16 @@
         <div class="d1">
             <button  class="button1" onclick="printScreen()">PRINT</button>
         </div>
-        
+        <br><br>
+        <button onclick="createList()">CreateList</button>
+        <br><br>
+        <h2 id="list"></h2>
         <script>
             const car={
-                name:'',
-                model:'',
-                year:'',
-                variant:'',
+                name:'Rolls Royce',
+                model:'Fantum',
+                year:'2021',
+                variant:'UK',
                 work:function(){
                     console.log('Car is Running');
                 },
@@ -49,6 +52,18 @@
             function off(){
                 document.getElementById("image").src="https://www.w3schools.com/js/pic_bulboff.gif";
             }
+
+            function createList(){
+                let html='<ul>';
+                let arr=["Cappucino","Expresso","Latte","Cold Coffee"];
+                for(let n of arr){
+                    html+='<li>'+n+'</li>';
+                }
+                html+='</ul>';
+                document.getElementById('list').innerHTML=html;
+            }
+           
+
         </script>
     </body>
 </html>
