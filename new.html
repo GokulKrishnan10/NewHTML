@@ -12,12 +12,27 @@
         <img id="image" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width: 100px">
         <button onclick="off()">BULB OFF</button>
         <br><br>
+        <h3 id="Random"></h3>
         <div class="d1">
             <button  class="button1" onclick="printScreen()">PRINT</button>
         </div>
         
         <script>
+            const car={
+                name:'',
+                model:'',
+                year:'',
+                variant:'',
+                work:function(){
+                    console.log('Car is Running');
+                },
+                details:function(){
+                    console.log(this.name+"-"+this.model+"-"+this.year+"-"+this.variant+"-");
+                }
+            };
             window.alert("Unprotected Page");
+            let a=Math.random()*1000;
+            document.getElementById('Random').innerHTML="Random number between 0 and 100 is "+a;
             let x=5,y=10;
             var z=x+y;
             console.log(z);
