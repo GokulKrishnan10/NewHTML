@@ -10,6 +10,15 @@ const car={
         console.log(this.name+"-"+this.model+"-"+this.year+"-"+this.variant+"-");
     }
 };
+let json={
+    "name":"Gokul",
+    "Place":"Theni",
+    "State":"Tamil Nadu",
+    "country":"India",
+    "favorites":['Chocolates','Watching movies']
+};
+console.log(json['name']);
+console.log(json['favorites'].toString());
 window.alert("Unprotected Page");
 let a=Math.random()*1000;
 document.getElementById('Random').innerHTML="Random number between 0 and 100 is "+a;
@@ -39,3 +48,18 @@ function createList(){
     html+='</ul>';
     document.getElementById('list').innerHTML=html;
 }
+
+removeList=function(){
+    document.getElementById('list').innerHTML="";
+}
+class Student{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    display=function(){
+        console.log(this.name+'-----'+this.age);
+    }
+}
+st1=new Student("Gokul",20);
+console.log(st1.display());
