@@ -57,7 +57,7 @@ class Student{
         this.name=name;
         this.age=age;
     }
-    display=function(){
+    display=()=>{
         console.log(this.name+'-----'+this.age);
     }
 }
