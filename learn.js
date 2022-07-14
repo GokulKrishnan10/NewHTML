@@ -17,6 +17,14 @@ let json={
     "country":"India",
     "favorites":['Chocolates','Watching movies']
 };
+track=()=>{
+    if(confirm("Want this page to track your History?")){
+        document.getElementById("feedback").innerHTML="You Confirmed History tracking";
+    }
+    else{
+        document.getElementById("feedback").innerHTML="You clicked Cancel";
+    }
+}
 console.log(json['name']);
 console.log(json['favorites'].toString());
 window.alert("Unprotected Page");
