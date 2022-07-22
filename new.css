@@ -1,0 +1,33 @@
+li{
+    list-style: none;
+    display: inline-block;
+    padding:40px;
+    color: white;
+}
+nav.nav1{
+    background-color: rgb(85, 26, 179);
+}
+li:hover{
+    background-color: black;
+    color: white;
+    cursor:pointer;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ol.navbar{
+    margin-left:20cm;
+}
+div.menu{
+    display: flex;
+    margin-top: 2cm;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+div.new1{
+    margin-top: 1cm;
+    margin-left: 2cm;
+    float: left;
+}
