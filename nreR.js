@@ -6,7 +6,7 @@ function NavBar() {
         <header>
             <div>
                 <nav className="nav1">
-                    <div>
+v                     <div>
                         <div className="new1">
                             <div className="menu"></div>
                             <div className="menu"></div>
@@ -21,7 +21,7 @@ function NavBar() {
                     </div>
                 </nav>
             </div>
-            <Destination name="Gokul" />
+            <Destination name="Gokul" age="20" />
         </header>
     )
     root.render(
@@ -31,7 +31,7 @@ function NavBar() {
 function Destination(props) {
     return (
         <div>
-            <h1 >Hola, Hi There ,{props.name}</h1>
+            <h1 >Hola, Hi There ,{props.name} and your age is {props.age}</h1>
         </div>
     )
 }
