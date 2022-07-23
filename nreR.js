@@ -1,31 +1,48 @@
 const root=ReactDOM.createRoot(
     document.getElementById('root')
 )
-function NavBar() {
-    const element= (
-        <header>
-            <div>
-                <nav className="nav1">
-v                     <div>
-                        <div className="new1">
-                            <div className="menu"></div>
-                            <div className="menu"></div>
-                            <div className="menu"></div>
-                        </div>
-                        <ol className="navbar">
-                            <li>Home</li>
-                            <li>Contact</li>
-                            <li>About</li>
-                            <li>Exit</li>
-                        </ol>
+const obj1={
+    name:"The Harry Potter",
+    rating:4,
+    author:{
+        name:'J K rowling',
+        worth:'$3 biillion'
+    }
+}
+const Element= function(props){
+    return(
+    <header>
+        <div>
+            <nav className="nav1">
+                 <div>
+                    <div className="new1">
+                        <div className="menu"></div>
+                        <div className="menu"></div>
+                        <div className="menu"></div>
                     </div>
-                </nav>
-            </div>
-            <Destination name="Gokul" age="20" />
-        </header>
+                    <ol className="navbar">
+                        <li>Home</li>
+                        <li>Contact</li>
+                        <li>About</li>
+                        <li>Exit</li>
+                    </ol>
+                </div>
+                
+            </nav>
+        </div>
+        <Destination name="Gokul" age="20" />
+        <h1>Name :{props.name}</h1>
+        <h2>{props.rating}</h2>
+        <h3>Authors</h3>
+        <h3>{props.author.name}</h3>
+        <h3>Worth, {props.author.worth}</h3>
+    </header>
     )
+}
+function NavBar() {
     root.render(
-        [element,des, <h2>{car.GetCar()}</h2>, <Clock />]
+        [<Element name={obj1.name} rating={obj1.rating
+        } author={obj1.author}/>,des, <h2>{car.GetCar()}</h2>, <Clock />]
     )
 }
 function Destination(props) {
