@@ -24,16 +24,32 @@ class Counter extends React.Component{
             )
         )
     }
+    decrement(){
+        this.setState(
+            (prevState)=>(
+                {
+                    count:prevState.count-1
+                }
+            )
+        )
+    }
     incrementFive(){
         for(let i=0;i<5;i++){
             this.increment();
+        }
+    }
+    decrementFive(){
+        for(let i=0;i<5;i++){
+            this.decrement();
         }
     }
     render(){
         return(
             <div>
                 <h1>count - {this.state.count}</h1>
-                <button onClick={()=>this.incrementFive()}>Incremenet</button>
+                <button onClick={()=>this.incrementFive()}>Incremenet</button> 
+                <br></br><br></br>
+                <button onClick={()=>this.decrementFive()}>Decrement</button>
             </div>
         )
     }
