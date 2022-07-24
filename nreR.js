@@ -9,6 +9,35 @@ const obj1={
         worth:'$3 biillion'
     }
 }
+class Counter extends React.Component{
+    constructor(props){
+        super(props)
+        this.state={
+            count:0
+        }
+    }
+    increment(){
+        this.setState((prevState)=>(
+                {
+                    count:prevState.count+1
+                }
+            )
+        )
+    }
+    incrementFive(){
+        for(let i=0;i<5;i++){
+            this.increment();
+        }
+    }
+    render(){
+        return(
+            <div>
+                <h1>count - {this.state.count}</h1>
+                <button onClick={()=>this.incrementFive()}>Incremenet</button>
+            </div>
+        )
+    }
+}
 class App extends React.Component{
     constructor(props){
         super(props)
@@ -21,7 +50,7 @@ class App extends React.Component{
     }
     componentDidMount(){
         this.timerID=setInterval(
-            ()=>this.tick(),1000
+            ()=>(this.tick()),1000
         )
     }
     tick(){
@@ -60,6 +89,9 @@ class App extends React.Component{
         <h3>{this.props.author.name}</h3>
         <h3>Worth, {this.props.author.worth}</h3>
         <h2>It is {this.state.time}.</h2>
+        <div>
+            <Counter ></Counter>
+        </div>
     </header>
         )
     }
