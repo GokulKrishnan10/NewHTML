@@ -9,8 +9,31 @@ const obj1={
         worth:'$3 biillion'
     }
 }
-const Element= function(props){
-    return(
+class App extends React.Component{
+    constructor(props){
+        super(props)
+        this.state={
+            time:new Date().toLocaleTimeString()
+        }
+    }
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+    componentDidMount(){
+        this.timerID=setInterval(
+            ()=>this.tick(),1000
+        )
+    }
+    tick(){
+        this.setState(
+            {
+                time:new Date().toLocaleTimeString()
+            }
+        )
+    }
+    
+    render(){
+        return(
     <header>
         <div>
             <nav className="nav1">
@@ -27,24 +50,26 @@ const Element= function(props){
                         <li>Exit</li>
                     </ol>
                 </div>
-                
             </nav>
+            
         </div>
         <Destination name="Gokul" age="20" />
-        <h1>Name :{props.name}</h1>
-        <h2>{props.rating}</h2>
+        <h1>Name :{this.props.name}</h1>
+        <h2>{this.props.rating}</h2>
         <h3>Authors</h3>
-        <h3>{props.author.name}</h3>
-        <h3>Worth, {props.author.worth}</h3>
+        <h3>{this.props.author.name}</h3>
+        <h3>Worth, {this.props.author.worth}</h3>
+        <h2>It is {this.state.time}.</h2>
     </header>
-    )
+        )
+    }
 }
-function NavBar() {
-    root.render(
-        [<Element name={obj1.name} rating={obj1.rating
-        } author={obj1.author}/>,des, <h2>{car.GetCar()}</h2>, <Clock />]
-    )
-}
+
+root.render(
+    <App name={obj1.name} 
+    rating={obj1.rating} 
+    author={obj1.author}/>
+)
 function Destination(props) {
     return (
         <div>
@@ -63,13 +88,11 @@ const car = {
 const Clock = function () {
     return (
         <div>
-            <h2>It is {new Date().toLocaleTimeString()}.</h2>
+           
         </div>
     )
 }
 const des = (<h1>This is a new beginning</h1>)
-console.log(car.name)
-setInterval(NavBar, 1000);
 //Rendering a custom component
 
 // ReactDOM.render(
