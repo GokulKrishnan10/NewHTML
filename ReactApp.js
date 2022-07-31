@@ -64,6 +64,15 @@ const b1 = {
     cursor: 'pointer',
     marginLeft: '4cm'
   }
+  const country=['India','Cannada','USA','UK','Venezula']
+  const countries=[]
+  for(let element of country){
+    countries.push(
+        <li>
+            {element}
+        </li>
+    )
+  }
 class App extends React.Component{
     constructor(props){
         super(props)
