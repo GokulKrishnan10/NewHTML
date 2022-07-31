@@ -73,6 +73,12 @@ const b1 = {
         </li>
     )
   }
+  const arr=[6,9,8,7,5,1,4,2,3,10]
+  const list=arr.map((number)=>
+        <li key={number.toString()}>
+            {number}
+        </li>
+  );
 class App extends React.Component{
     constructor(props){
         super(props)
