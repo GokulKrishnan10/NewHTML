@@ -131,17 +131,19 @@ class App extends React.Component{
     handleChange=(event)=>{
         this.setState(
             {
+                name:'Welcome, '+event.target.value,
                 value:event.target.value
             }
         )
     }
 
     handleSubmit=(event)=>{
-        this.setState(
-            {
-                name:'Welcome, '+this.state.value
-            }
-        )
+        // this.setState(
+        //     {
+        //         name:this.state.value
+        //     }
+        // )
+        alert("Form Submitted  "+this.state.value)
         event.preventDefault();
     }
 
@@ -188,7 +190,7 @@ class App extends React.Component{
                 <label>
                     UserName:
                     <input
-                    type="name" onChange={this.handleChange}/>
+                    type="name" value={this.state.value} onChange={this.handleChange}/>
                     <br/>
                     Password
                     <input
