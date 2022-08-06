@@ -21,6 +21,20 @@ function Boiling(props){
     }
     return <h3>The Water won't Boil</h3>
 }
+function Compo2(){
+    return(
+        <div className="compo2">
+            <h2>Composition2</h2>
+        </div>
+    )
+}
+function Compo1(){
+    return(
+        <div className="compo1">
+            <h1>Composition1</h1>
+        </div>
+    )
+}
 class Counter extends React.Component{
     constructor(props){
         super(props)
@@ -258,6 +272,13 @@ class App extends React.Component{
             </form>
         </div>
         <Boiling temparature={parseFloat(this.state.temp)}/>
+        <div>
+            Composition: components passed as props to other component
+            {this.props.comp1}
+        </div>
+        <div>
+            {this.props.comp2}
+        </div>
         </header>
         )
     }
@@ -265,7 +286,9 @@ class App extends React.Component{
 root.render(
     <App name={obj1.name} 
     rating={obj1.rating} 
-    author={obj1.author}/>
+    author={obj1.author}
+    comp1={<Compo1 />}
+    comp2={<Compo2 />}/>
 )
 function Destination(props) {
     return (
