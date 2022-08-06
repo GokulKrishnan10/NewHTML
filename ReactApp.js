@@ -9,6 +9,18 @@ const obj1={
         worth:'$3 biillion'
     }
 }
+function ToCelsius(fahrenheit){
+    return (fahrenheit-32)*5/9;
+}
+function ToFahrenheit(celsius){
+    return (celsius*9/5)+32;
+}
+function Boiling(props){
+    if(props.temparature>=100){
+        return <h3>The Water will boil</h3>
+    }
+    return <h3>The Water won't Boil</h3>
+}
 class Counter extends React.Component{
     constructor(props){
         super(props)
@@ -87,8 +99,12 @@ class App extends React.Component{
             word:'Click to Subsrcibe',
             text:'Subscribe',
             button:true,
-            name:''
+            name:'',
+            temp:0,
+            fahren:32,
+            
         }
+        console.log(this)
     }
     componentWillUnmount() {
         clearInterval(this.timerID);
@@ -147,6 +163,24 @@ class App extends React.Component{
         event.preventDefault();
     }
 
+    handleCelsiusTemperature=(event)=>{
+        this.setState(
+            {
+                temp:event.target.value,
+                fahren:ToFahrenheit(event.target.value)
+            }
+        )
+    }
+
+    handleFahrenheitTemperature=(event)=>{
+        this.setState(
+            {
+                fahren:event.target.value,
+                temp:ToCelsius(event.target.value)
+            }
+        )
+    }
+
     render(){
         return(
     <header>
@@ -190,18 +224,41 @@ class App extends React.Component{
                 <label>
                     UserName:
                     <input
-                    type="name" value={this.state.value} onChange={this.handleChange}/>
+                    type="text" onChange={this.handleChange}/>
                     <br/>
                     Password
                     <input
                     type="password" />
                     <br/>
+                    DOB:
+                    <input type="date" />
+                    <br/>
                     <input type="submit" value="Submit" className="submit" />
                 </label>
             </form>         
         </div>
-         
-    </header>
+        <br />
+        <div className="form2">
+            <form>
+                <fieldset>
+                    <legend>Temperature in Celsius</legend>
+                    Enter the Temperature in Celsius:
+                    <input value={this.state.temp} onChange={this.handleCelsiusTemperature} />
+                </fieldset>
+            </form>
+        </div>
+        <br />
+        <div className="form3">
+            <form>
+                <fieldset>
+                    <legend>Temperature in Fahrenheit</legend>
+                    Enter the Temperature in Fahrenheit:
+                    <input value={this.state.fahren}  onChange={this.handleFahrenheitTemperature}/>
+                </fieldset>
+            </form>
+        </div>
+        <Boiling temparature={parseFloat(this.state.temp)}/>
+        </header>
         )
     }
 }
