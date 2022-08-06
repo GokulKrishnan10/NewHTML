@@ -1,0 +1,20 @@
+{
+  "name": "JS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ReactApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GokulKrishnan10/NewHTML.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GokulKrishnan10/NewHTML/issues"
+  },
+  "homepage": "https://github.com/GokulKrishnan10/NewHTML#readme"
+}
