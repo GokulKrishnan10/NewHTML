@@ -56,3 +56,17 @@ div.new1{
     margin-left:4cm;
     box-shadow: 0px 8px 15px rgb(6, 98, 138);
 }
+input{
+    display: flex;
+}
+div.form1{
+    background-color: aquamarine;
+    width: 8cm;
+    height:8cm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input.submit{
+    font-family: Segoe UI;
+}

@@ -86,7 +86,8 @@ class App extends React.Component{
             time:new Date().toLocaleTimeString(),
             word:'Click to Subsrcibe',
             text:'Subscribe',
-            button:true
+            button:true,
+            name:''
         }
     }
     componentWillUnmount() {
@@ -127,6 +128,23 @@ class App extends React.Component{
         
     }
 
+    handleChange=(event)=>{
+        this.setState(
+            {
+                value:event.target.value
+            }
+        )
+    }
+
+    handleSubmit=(event)=>{
+        this.setState(
+            {
+                name:'Welcome, '+this.state.value
+            }
+        )
+        event.preventDefault();
+    }
+
     render(){
         return(
     <header>
@@ -164,11 +182,27 @@ class App extends React.Component{
             }>{this.state.text}</button>
             <h1>{this.state.word}</h1>
         </div>
+        <h2>{this.state.name}</h2>  
+        <div className="form1">
+            <form className="formInput" onSubmit={this.handleSubmit}>
+                <label>
+                    UserName:
+                    <input
+                    type="name" onChange={this.handleChange}/>
+                    <br/>
+                    Password
+                    <input
+                    type="password" />
+                    <br/>
+                    <input type="submit" value="Submit" className="submit" />
+                </label>
+            </form>         
+        </div>
+         
     </header>
         )
     }
 }
-
 root.render(
     <App name={obj1.name} 
     rating={obj1.rating} 
